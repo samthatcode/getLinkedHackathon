@@ -81,7 +81,7 @@ function Faq() {
           data-aos="fade-down"
         >
           {faqs.map((faq, index) => (
-            <FAQ faq={faq} index={index} key={index} toggleFAQ={toggleFAQ} />
+            <FAQCompo faq={faq} index={index} key={index} toggleFAQ={toggleFAQ} />
           ))}
         </div>
       </div>
@@ -102,7 +102,7 @@ function Faq() {
 
 export default Faq;
 
-const FAQ = ({ faq, index, toggleFAQ }) => {
+const FAQCompo = ({ faq, index, toggleFAQ }) => {
   return (
     <div
       className={"faq " + (faq.open ? "open" : "")}
