@@ -5,6 +5,9 @@ import grayStar from "../assets/grey_star.svg";
 import coWorker from "../assets/co_worker.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import FAQCompo from "./FAQCompo";
+
+
 function Faq() {
   const [faqs, setFaqs] = useState([
     {
@@ -51,6 +54,8 @@ function Faq() {
       })
     );
   };
+
+
   useEffect(() => {
     AOS.init({
       duration: 750,
@@ -59,6 +64,9 @@ function Faq() {
       anchorPlacement: "top-bottom",
     });
   }, []);
+
+
+
   return (
     <section className="attrib md:px-[4rem] pt-[5rem]" id="faq">
       <div className="md:w-[50%] w-full md:text-left text-center ">
@@ -102,15 +110,4 @@ function Faq() {
 
 export default Faq;
 
-const FAQCompo = ({ faq, index, toggleFAQ }) => {
-  return (
-    <div
-      className={"faq " + (faq.open ? "open" : "")}
-      key={index}
-      onClick={() => toggleFAQ(index)}
-    >
-      <div className="faq-question">{faq.question}</div>
-      <div className="faq-answer">{faq.answer}</div>
-    </div>
-  );
-};
+
